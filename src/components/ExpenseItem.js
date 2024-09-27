@@ -1,15 +1,15 @@
-import './ExpenseItem.css'
+import "./ExpenseItem.css";
 
-function EmpenseItem() {
-    return (
-        <div className="expense-item">
-            <div>Jan 21 2024</div>
-            <div className="expense-item__description">
-                <h2>Bike Insurance</h2>
-                <div className="expense-item__price">1500₹</div>
-            </div>
-        </div>
-    );
+function EmpenseItem(props) {
+  return (
+    <div className="expense-item">
+      <div>{props.date.toISOString()}</div>
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">{props.amount}₹</div>
+      </div>
+    </div>
+  );
 }
 
 export default EmpenseItem;
