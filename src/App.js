@@ -29,10 +29,14 @@ function App() {
     },
   ];
 
+  const saveExpenseHandler = (newExpense) => {
+    console.log(newExpense);
+  };
+
   return (
     <div>
-      <NewExpense />
-      <Expenses items={expenseItems} />
+      <NewExpense onNewExpenseSaveHandler={saveExpenseHandler}/>
+      <Expenses items={expenseItems}/>
     </div>
   );
 }
