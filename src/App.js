@@ -1,8 +1,9 @@
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expenseItems = [
+  const DUMMY_ITEMS = [
     {
       id: "i1",
       title: "Bike Insurance",
@@ -29,14 +30,18 @@ function App() {
     },
   ];
 
+  const [expenseItems, setExpenseItem] = useState(DUMMY_ITEMS);
+
   const saveExpenseHandler = (newExpense) => {
-    console.log(newExpense);
+    setExpenseItem((prevExpenseItems) => {
+      return [newExpense, ...prevExpenseItems];
+    });
   };
 
   return (
     <div>
-      <NewExpense onNewExpenseSaveHandler={saveExpenseHandler}/>
-      <Expenses items={expenseItems}/>
+      <NewExpense onNewExpenseSaveHandler={saveExpenseHandler} />
+      <Expenses items={expenseItems} />
     </div>
   );
 }
