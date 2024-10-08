@@ -20,13 +20,13 @@ function App() {
       id: "i3",
       title: "Movie",
       amount: 1200,
-      date: new Date(2024, 7, 28),
+      date: new Date(2022, 7, 28),
     },
     {
       id: "i4",
       title: "Bakery",
       amount: 200,
-      date: new Date(2024, 7, 2),
+      date: new Date(2023, 7, 2),
     },
   ];
 
